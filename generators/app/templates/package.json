@@ -1,7 +1,7 @@
 {
-  "name": "bevy",
-  "version": "1.0.0",
-  "description": "bevy app",
+  "name": "<%= this.name %>",
+  "version": "0.0.1",
+  "description": "<%= this.name %> app description.",
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=true node server.js",

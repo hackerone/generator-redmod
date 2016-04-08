@@ -7,30 +7,39 @@ module.exports = yeoman.generators.Base.extend({
     prompting: function() {
         var done = this.async();
 
-        // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the impressive ' + chalk.red('') + ' generator!'
+            'Vanakkam!  Redux Modules Generator'
         ));
 
         var prompts = [{
             type: 'confirm',
-            name: 'someOption',
-            message: 'Would you like to enable this option?',
+            name: 'name',
+            message: 'App name?',
             default: true
         }];
 
         this.prompt(prompts, function(props) {
             this.props = props;
-            // To access props later use this.props.someOption;
-
             done();
         }.bind(this));
     },
 
     writing: function() {
-        this.fs.copy(
-            this.templatePath('dummyfile.txt'),
-            this.destinationPath('dummyfile.txt')
+        this.fs.directory(
+            this.templatePath('scaffold'),
+            this.destinationPath('.'),
+            );
+            
+        this.fs.copyTpl(
+            this.templatePath('index.html'),
+            this.destinationPath('index.html'),
+            this
+        );
+        
+        this.fs.copyTpl(
+            this.templatePath('index.html'),
+            this.destinationPath('index.html'),
+            this
         );
     },
 
