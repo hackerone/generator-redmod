@@ -1,0 +1,13 @@
+@import 'lib/css/normalize.css';
+
+.wrapper {
+   composes: container from 'lib/css/skeleton.css';
+}
+
+.sidebar {
+    width: 20%;
+}
+
+.content {
+    width: 80%;
+}
