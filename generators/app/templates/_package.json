@@ -1,7 +1,7 @@
 {
-  "name": "<%= this.name %>",
+  "name": "<%= props.name %>",
   "version": "0.0.1",
-  "description": "<%= this.name %> app description.",
+  "description": "<%= props.description %>",
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=true node server.js",

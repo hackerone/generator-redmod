@@ -8,14 +8,30 @@ module.exports = yeoman.generators.Base.extend({
         var done = this.async();
 
         this.log(yosay(
-            'Vanakkam!  Redux Modules Generator'
+            'Vanakkam!  Redux Modules - App Generator'
         ));
 
         var prompts = [{
-            type: 'confirm',
+            type: 'string',
             name: 'name',
-            message: 'App name?',
-            default: true
+            message: 'Name your app',
+            default: 'Crazy app'
+        }, {
+          type: 'string',
+          name: 'description',
+          message: 'Describe your app',
+          'default': '...'
+        }, {
+          type: 'string',
+          name: 'port',
+          message: 'Which port would you like to run on?',
+          'default': '3000'
+        }, {
+          type: 'list',
+          name: 'install',
+          message: 'Install dependencies?',
+          choices: [{ name: 'Yes', value: true }, { name: 'No', value: false }],
+          'default': true
         }];
 
         this.prompt(prompts, function(props) {
@@ -25,25 +41,33 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: function() {
-        this.fs.directory(
+        this.directory(
             this.templatePath('scaffold'),
-            this.destinationPath('.'),
+            this.destinationPath('.')
             );
             
         this.fs.copyTpl(
-            this.templatePath('index.html'),
+            this.templatePath('_index.html'),
             this.destinationPath('index.html'),
             this
         );
         
         this.fs.copyTpl(
-            this.templatePath('index.html'),
-            this.destinationPath('index.html'),
+            this.templatePath('_package.json'),
+            this.destinationPath('package.json'),
+            this
+        );
+
+        this.fs.copyTpl(
+            this.templatePath('_server.js'),
+            this.destinationPath('server.js'),
             this
         );
     },
 
     install: function() {
-        this.installDependencies();
+        if(this.props.install === true) {
+          this.installDependencies();
+        }
     }
 });

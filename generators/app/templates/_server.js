@@ -37,10 +37,10 @@ app.get('/:page', function(req, res) {
 	res.sendFile(path.join(__dirname, 'dev', req.params['page']));
 });
   
-app.listen(3000, 'localhost', function (err, result) {
+app.listen(<%= props.port %>, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:3000');
+  console.log('Listening at localhost:<%= props.port %>');
 });

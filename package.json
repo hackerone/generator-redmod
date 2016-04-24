@@ -1,5 +1,6 @@
 {
-    "name": "generator-redmod",
+  "name": "generator-redmod",
+  "version": "0.0.1",
   "dependencies": {
     "yeoman-generator": "^0.21.1",
     "chalk": "^1.0.0",

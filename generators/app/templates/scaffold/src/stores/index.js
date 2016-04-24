@@ -1,2 +1,2 @@
-Dummy = (state) => { return state; };
-export Dummy;
+const Dummy = (state) => { return state; };
+export default Dummy;
