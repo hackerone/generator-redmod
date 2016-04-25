@@ -9,18 +9,18 @@ module.exports = yeoman.generators.Base.extend({
         var done = this.async();
 
         this.log(yosay(
-            'Vanakkam!  Redux Modules - Component Generator'
+            'Vanakkam! Redux Modules - Component Generator'
         ));
 
         var prompts = [{
             type: 'string',
             name: 'name',
-            message: 'Component Name'
+            message: 'Component name - CamelCasePlease'
         }, {
           type: 'list',
           name: 'type',
           message: 'Component type?',
-          choices: [{ name: 'Component', value: 'components' }, { name: 'Container', value: 'containers' }],
+          choices: [{ name: 'UI Component', value: 'components' }, { name: 'Container', value: 'containers' }],
           'default': 'components'
         }];
 
@@ -36,6 +36,10 @@ module.exports = yeoman.generators.Base.extend({
         componentDir = name.toLowerCase(),
         jsPath = path.join('src', type, componentDir, name + '.js' ),
         cssPath = path.join('src', type, componentDir, name + '.scss' );
+
+      if(!name) {
+        throw new Error("Component name required in CamelCase");
+      }
 
       this.fs.copyTpl(
           this.templatePath('_component.js'),

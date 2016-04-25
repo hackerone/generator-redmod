@@ -22,7 +22,7 @@ describe('redmod:app', function () {
       'webpack.config.js',
       'webpack.prod.js',
       'src/app.js',
-      'src/stores/index.js'
+      'src/modules/index.js'
     ]);
   });
 
@@ -32,6 +32,5 @@ describe('redmod:app', function () {
     assert.fileContent('package.json', /test description/);
     assert.fileContent('server.js', /listen\(8080/);
   });
-
 
 });
