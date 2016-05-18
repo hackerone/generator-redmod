@@ -20,7 +20,9 @@ module.exports = yeoman.generators.Base.extend({
         }, {
             type: 'list',
             name: 'generateIndex',
-            message: 'Generate module index?'
+            message: 'Generate module index?',
+            choices: [{ name: 'Yes', value: true }, { name: 'No', value: false }],
+            'default': true
         }];
 
         this.prompt(prompts, function(props) {

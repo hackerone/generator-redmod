@@ -1,3 +1,2 @@
-<% modules.forEach( function(module) { %>
-	export { default as <%= module.name %> } from './<%= module.file %>';
+<% modules.forEach( function(module) { %>export { default as <%= module.name %> } from './<%= module.file %>';
 <% }); %>

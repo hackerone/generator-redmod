@@ -22,6 +22,10 @@ module.exports = yeoman.generators.Base.extend({
           message: 'Component type?',
           choices: [{ name: 'UI Component', value: 'components' }, { name: 'Container', value: 'containers' }],
           'default': 'components'
+        }, {
+          type: 'string',
+          name: 'reducer',
+          message: 'Reducer name?'
         }];
 
         this.prompt(prompts, function(props) {
@@ -41,11 +45,20 @@ module.exports = yeoman.generators.Base.extend({
         throw new Error("Component name required in CamelCase");
       }
 
-      this.fs.copyTpl(
-          this.templatePath('_component.js'),
-          this.destinationPath(jsPath),
-          this
-      );
+      if(this.props.reducer) {
+        this.fs.copyTpl(
+            this.templatePath('_componentWithReducer.js'),
+            this.destinationPath(jsPath),
+            this
+        );
+      } else {
+        this.fs.copyTpl(
+            this.templatePath('_component.js'),
+            this.destinationPath(jsPath),
+            this
+        );
+      }
+
 
       this.fs.copyTpl(
           this.templatePath('_style.scss'),
