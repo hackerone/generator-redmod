@@ -10,6 +10,12 @@
     "yeoman-assert": "^2.0.0"
   },
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "redux",
+    "react",
+    "redux-modules",
+    "redmod",
+    "react-router",
+    "reducer-generator"
   ]
 }
