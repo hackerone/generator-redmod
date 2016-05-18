@@ -10,7 +10,7 @@ A Yeoman generator for generating ES6 + React + Redux apps, inspired from https:
 # Generator options
 
 ## Scaffolding complete app
-`yo redmod`
+`yo redmod <dirname>`
 Generates the whole app skeleton.
 
 ## Generate React Components / Containers
@@ -31,6 +31,38 @@ Component vs Container?
 Generates a redux module which contains a reducer, action and constant
 
 # Directory structure
+
+├── index.html
+├── jsconfig.json
+├── package.json
+├── server.js
+├── src
+│   ├── app.js
+│   ├── components
+│   │   ├── footer
+│   │   │   ├── Footer.js
+│   │   │   └── Footer.scss
+│   │   └── header
+│   │       ├── Header.js
+│   │       └── Header.scss
+│   ├── config
+│   │   ├── routes.js
+│   │   └── store.js
+│   ├── containers
+│   │   └── layout
+│   │       ├── Layout.js
+│   │       └── Layout.scss
+│   ├── lib
+│   │   ├── css
+│   │   │   ├── normalize.css
+│   │   │   └── skeleton.css
+│   │   └── namespaceWords.js
+│   └── modules
+│       └── index.js
+├── tst
+│   └── utils.js
+├── webpack.config.js
+└── webpack.prod.js
 
 
 # Roadmap
