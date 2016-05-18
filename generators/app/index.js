@@ -50,9 +50,8 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: function() {
-      var destRoot = this.props.path;
-      this.destinationRoot(destRoot);
-      console.log(this.destinationPath('index.html'));
+      this.destinationRoot(this.props.path);
+
       this.directory(
           this.templatePath('scaffold'),
           this.destinationPath('.')
