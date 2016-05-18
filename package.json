@@ -1,6 +1,16 @@
 {
   "name": "generator-redmod",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "description": "A Yeoman generator for generating ES6 + React + Redux apps. Uses webpack, react-router, CSS-modules.",
+  "author": {
+    "name": "Ganesh Shanmugasundaram",
+    "email": "hackerone@gmail.com",
+    "url": "https://github.com/hackerone"
+  },
+  "bugs": { 
+    "url" : "https://github.com/hackerone/generator-redmod/issues",
+    "email" : "hackerone@gmail.com"
+  },
   "dependencies": {
     "yeoman-generator": "^0.21.1",
     "chalk": "^1.0.0",
@@ -16,6 +26,7 @@
     "redux-modules",
     "redmod",
     "react-router",
-    "reducer-generator"
+    "reducer-generator",
+    "webpack"
   ]
 }
