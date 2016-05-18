@@ -31,7 +31,7 @@ Component vs Container?
 Generates a redux module which contains a reducer, action and constant
 
 # Directory structure
-
+<pre>
 ├── index.html
 ├── jsconfig.json
 ├── package.json
@@ -63,7 +63,7 @@ Generates a redux module which contains a reducer, action and constant
 │   └── utils.js
 ├── webpack.config.js
 └── webpack.prod.js
-
+</pre>
 
 # Roadmap
 - Test generation
