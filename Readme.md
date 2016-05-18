@@ -58,13 +58,16 @@ Generates a redux module which contains a reducer, action and constant
 │   │   │   └── skeleton.css
 │   │   └── namespaceWords.js
 │   └── modules
+│       ├── Say.js
 │       └── index.js
 ├── tst
+│   ├── modules
+│   │   └── Say.js
 │   └── utils.js
 ├── webpack.config.js
 └── webpack.prod.js
 </pre>
 
 # Roadmap
-- Test generation
+- Improve test generation
 

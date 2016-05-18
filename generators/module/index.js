@@ -8,6 +8,8 @@ var fs = require('fs');
 module.exports = yeoman.generators.Base.extend({
     prompting: function() {
         var done = this.async();
+        var args = this.argument().arguments;
+        var defaultName = args[0] || '.';
 
         this.log(yosay(
             'Vanakkam! Redux Modules - Module (Store + Action + Constants) Generator'
@@ -16,7 +18,8 @@ module.exports = yeoman.generators.Base.extend({
         var prompts = [{
             type: 'string',
             name: 'name',
-            message: 'Module name - CamelCasePlease'
+            message: 'Module name - CamelCasePlease',
+            default: defaultName
         }, {
             type: 'list',
             name: 'generateIndex',
