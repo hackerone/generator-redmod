@@ -30,6 +30,13 @@ Component vs Container?
 
 Generates a redux module which contains a reducer, action and constant
 
+
+## Starting the server
+`npm start`
+
+## Building for prod
+`npm build`
+
 # Directory structure
 <pre>
 ├── index.html
@@ -69,5 +76,5 @@ Generates a redux module which contains a reducer, action and constant
 </pre>
 
 # Roadmap
-- Improve test generation
+- Test generation
 
