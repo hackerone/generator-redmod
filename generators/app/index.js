@@ -7,6 +7,10 @@ module.exports = yeoman.generators.Base.extend({
     prompting: function() {
         var done = this.async();
 
+        var args = this.argument().arguments;
+        var defaultPath = args[0] || '.';
+
+        
         this.log(yosay(
             'Vanakkam!  Redux Modules - App Generator'
         ));
@@ -16,6 +20,11 @@ module.exports = yeoman.generators.Base.extend({
             name: 'name',
             message: 'Name your app',
             default: 'Crazy app'
+        }, {
+          type: 'string',
+          name: 'path',
+          'message': 'Path of your app',
+          default: defaultPath
         }, {
           type: 'string',
           name: 'description',
@@ -41,28 +50,31 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: function() {
-        this.directory(
-            this.templatePath('scaffold'),
-            this.destinationPath('.')
-            );
-            
-        this.fs.copyTpl(
-            this.templatePath('_index.html'),
-            this.destinationPath('index.html'),
-            this
-        );
-        
-        this.fs.copyTpl(
-            this.templatePath('_package.json'),
-            this.destinationPath('package.json'),
-            this
-        );
+      var destRoot = this.props.path;
+      this.destinationRoot(destRoot);
+      console.log(this.destinationPath('index.html'));
+      this.directory(
+          this.templatePath('scaffold'),
+          this.destinationPath('.')
+          );
+          
+      this.fs.copyTpl(
+          this.templatePath('_index.html'),
+          this.destinationPath('index.html'),
+          this
+      );
+      
+      this.fs.copyTpl(
+          this.templatePath('_package.json'),
+          this.destinationPath('package.json'),
+          this
+      );
 
-        this.fs.copyTpl(
-            this.templatePath('_server.js'),
-            this.destinationPath('server.js'),
-            this
-        );
+      this.fs.copyTpl(
+          this.templatePath('_server.js'),
+          this.destinationPath('server.js'),
+          this
+      );
     },
 
     install: function() {
